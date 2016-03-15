@@ -1,0 +1,52 @@
+
+{ "commands":[
+    {"buttonId":"btnRokuBack", "command destination":"roku", "content description":"Back", "command text":"Back"},
+    {"buttonId":"btnRokuUp", "command destination":"roku", "content description":"Up", "command text":"Up"},
+    {"buttonId":"btnRokuHome", "command destination":"roku", "content description":"Home", "command text":"Home"},
+    {"buttonId":"btnRokuLeft", "command destination":"roku", "content description":"Left", "command text":"Left"},
+    {"buttonId":"btnRokuOk", "command destination":"roku", "content description":"Ok", "command text":"Select"},
+    {"buttonId":"btnRokuRight", "command destination":"roku", "content description":"Right", "command text":"Right"},
+    {"buttonId":"btnRokuReplay", "command destination":"roku", "content description":"Replay", "command text":"InstantReplay"},
+    {"buttonId":"btnRokuDown", "command destination":"roku", "content description":"Down", "command text":"Down"},
+    {"buttonId":"btnRokuInfo", "command destination":"roku", "content description":"Info", "command text":"Lit_*"},
+    {"buttonId":"btnRokuRewind", "command destination":"roku", "content description":"Rewind", "command text":"Rewind"},
+    {"buttonId":"btnRokuPlay", "command destination":"roku", "content description":"Play", "command text":"Play"},
+    {"buttonId":"btnRokuFastForword", "command destination":"roku", "content description":"FastFwd", "command text":"Fwd"},
+    {"buttonId":"btnSound1", "command destination":"sound", "content description":"Sound 1", "command text":"1"},
+    {"buttonId":"btnSound2", "command destination":"sound", "content description":"Sound 2", "command text":"2"},
+    {"buttonId":"btnSound3", "command destination":"sound", "content description":"Sound 3", "command text":"3"},
+    {"buttonId":"btnMute", "command destination":"tv", "content description":"Mute", "command text":"0x20DF906F"},
+    {"buttonId":"btnARROWUP", "command destination":"tv", "content description":"Up", "command text":"0x20DFA25D"},
+    {"buttonId":"btnOK", "command destination":"tv", "content description":"OK", "command text":"0x20DFA25D"},
+    {"buttonId":"btnArrowDown", "command destination":"tv", "content description":"Down", "command text":"0x20DF629D"},
+    {"buttonId":"btnArrowLeft", "command destination":"tv", "content description":"Left", "command text":"0x20DFE21D"},
+    {"buttonId":"btnArrowRight", "command destination":"tv", "content description":"Right", "command text":"0x20DF12ED"},
+    {"buttonId":"btnPOWER", "command destination":"tv", "content description":"Power", "command text":"0x20DF10EF"},
+    {"buttonId":"btnVOLUP", "command destination":"tv", "content description":"Volume Up", "command text":"0x20DF40BF"},
+    {"buttonId":"btnVOLDOWN", "command destination":"tv", "content description":"Volume Down", "command text":"0x20DFC03F"},
+    {"buttonId":"btnINPUT", "command destination":"tv", "content description":"Input", "command text":"0x20DFF40B"},
+    {"buttonId":"btnCHANUP", "command destination":"tv", "content description":"Channel Up", "command text":"0x20DF00FF"},
+    {"buttonId":"btnCHANDOWN", "command destination":"tv", "content description":"Channel Down", "command text":"0x20DF807F"}
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

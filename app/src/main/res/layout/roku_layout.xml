@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:contentDescription="roku"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/btnHeight"
+        android:orientation="horizontal"
+        android:contentDescription="roku">
+
+        <Button
+            android:id="@+id/btnRokuBack"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btnHeight"
+            android:layout_weight="1"
+            android:text="Back"
+            android:contentDescription="Back"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/btnRokuUp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btnHeight"
+            android:layout_weight="1"
+            android:text="Up"
+            android:contentDescription="Up"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/btnRokuHome"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btnHeight"
+            android:layout_weight="1"
+            android:text="Home"
+            android:contentDescription="Home"
+            android:onClick="onClick"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/btnHeight"
+        android:orientation="horizontal"
+        android:contentDescription="roku">
+
+        <Button
+            android:id="@+id/btnRokuLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btnHeight"
+            android:layout_weight="1"
+            android:text="Left"
+            android:contentDescription="Left"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/btnRokuOk"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btnHeight"
+            android:layout_weight="1"
+            android:text="Ok"
+            android:contentDescription="Ok"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/btnRokuRight"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btnHeight"
+            android:layout_weight="1"
+            android:text="Right"
+            android:contentDescription="Right"
+            android:onClick="onClick"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/btnHeight"
+        android:orientation="horizontal"
+        android:contentDescription="roku">
+
+        <Button
+            android:id="@+id/btnRokuReplay"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btnHeight"
+            android:layout_weight="1"
+            android:text="Replay"
+            android:contentDescription="Replay"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/btnRokuDown"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btnHeight"
+            android:layout_weight="1"
+            android:text="Down"
+            android:contentDescription="Down"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/btnRokuInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btnHeight"
+            android:layout_weight="1"
+            android:text="Info"
+            android:contentDescription="Info"
+            android:onClick="onClick"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/btnHeight"
+        android:orientation="horizontal"
+        android:contentDescription="roku">
+
+        <Button
+            android:id="@+id/btnRokuRewind"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btnHeight"
+            android:layout_weight="1"
+            android:text="Rewind"
+            android:contentDescription="Rewind"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/btnRokuPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btnHeight"
+            android:layout_weight="1"
+            android:text="Play"
+            android:contentDescription="Play"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/btnRokuFastForword"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btnHeight"
+            android:layout_weight="1"
+            android:text="FastFwd"
+            android:contentDescription="FastFwd"
+            android:onClick="onClick"/>
+    </LinearLayout>
+
+</LinearLayout>

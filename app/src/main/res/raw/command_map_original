@@ -1,0 +1,28 @@
+btnRokuBack		roku    Back	Back
+btnRokuUp		roku    Up	Up
+btnRokuHome		roku    Home	Home
+btnRokuLeft		roku    Left	Left
+btnRokuOk		roku    Ok	Select
+btnRokuRight		roku    Right	Right
+btnRokuReplay		roku    Replay	InstantReplay
+btnRokuDown		roku    Down	Down
+btnRokuInfo		roku    Info	Lit_*
+btnRokuRewind		roku    Rewind	Rewind
+btnRokuPlay		roku    Play	Play
+btnRokuFastForword	roku    FastFwd	Fwd
+btnSound1		sound   Sound 1 1
+btnSound2		sound   Sound 2	2
+btnSound3		sound   Sound 3	3
+
+btnMute			tv  Mute	0x20DF906F
+btnARROWUP		tv  Up	0x20DFA25D
+btnOK			tv  OK	0x20DF22DD
+btnArrowDown		tv  Down	0x20DF629D
+btnArrowLeft		tv  Left	0x20DFE21D
+btnArrowRight		tv  Right	0x20DF12ED
+btnPOWER		tv  Power	0x20DF10EF
+btnVOLUP		tv  Volume Up	0x20DF40BF
+btnVOLDOWN		tv  Volume Down	0x20DFC03F
+btnINPUT		tv  Input	0x20DFF40B
+btnCHANUP		tv  Channel Up	0x20DF00FF
+btnCHANDOWN		tv  Channel Down	0x20DF807F

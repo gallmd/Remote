@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:contentDescription="tv">
+
+    <Button
+        android:id="@+id/btnINPUT"
+        android:layout_height="@dimen/btnHeight"
+        android:layout_width="fill_parent"
+        android:text="Input"
+        android:contentDescription="Input"
+        android:onClick="onClick"
+        android:layout_weight="1">
+    </Button>
+
+    <Button
+        android:id="@+id/btnCHANUP"
+        android:layout_height="@dimen/btnHeight"
+        android:layout_width="fill_parent"
+        android:text="Ch +"
+        android:contentDescription="Channel Up"
+        android:onClick="onClick"
+        android:layout_weight="1">
+    </Button>
+
+    <Button
+        android:id="@+id/btnCHANDOWN"
+        android:layout_height="@dimen/btnHeight"
+        android:layout_width="fill_parent"
+        android:text="Ch -"
+        android:contentDescription="Channel Down"
+        android:onClick="onClick"
+        android:layout_weight="1">
+    </Button>
+
+</LinearLayout>

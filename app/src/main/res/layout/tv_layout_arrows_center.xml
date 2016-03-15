@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:contentDescription="tv">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Up"
+        android:contentDescription="Up"
+        android:id="@+id/btnARROWUP"
+        android:onClick="onClick"
+        android:layout_weight="1"/>
+
+
+    <Button
+        android:id="@+id/btnOK"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="OK"
+        android:contentDescription="OK"
+        android:onClick="onClick"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/btnArrowDown"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Dwn"
+        android:contentDescription="Down"
+        android:layout_below="@+id/btnOK"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClick"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>
