@@ -1,6 +1,11 @@
 package net.ddns.gallmd14.remote;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -16,22 +21,62 @@ import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
 
-    private NetworkCommandBuilder networkCommandBuilder;
-    private String commandMap;
+    private NetworkCommandLookup networkCommandLookup;
+    private String commandJSON;
+    private SharedPreferences preferences;
+    private SharedPreferences.OnSharedPreferenceChangeListener prefListener;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        FragmentTransaction trans = getFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainActivityFragment());
+        trans.addToBackStack("main");
+        trans.commit();
+
         try {
-            this.commandMap = playWithRawFiles();
+            this.commandJSON = loadCommandsFromFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        networkCommandBuilder = new NetworkCommandBuilder("192","192", this.commandMap);
+
+        SharedPreferences.Editor editor;
+        editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
+        editor.clear();
+        editor.commit();
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, true);
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String serverIP = preferences.getString("pref_server_ip", null);
+        String rokuIP = preferences.getString("pref_roku_ip", null);
+        String serverPort = preferences.getString("pref_server_port", null);
+        String rokuPort = preferences.getString("pref_roku_port", null);
+
+        int iServerPort = Integer.parseInt(serverPort);
+        int iRokuPort = Integer.parseInt(rokuPort);
+
+
+
+
+        networkCommandLookup = new NetworkCommandLookup(rokuIP, iRokuPort, serverIP, iServerPort, this.commandJSON);
+
+
+
+        prefListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+            public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+
+                Toast toast = Toast.makeText(getApplicationContext(),"changed", Toast.LENGTH_LONG);
+                toast.show();
+                rebuildNetworkCommandLookup();
+
+            }
+        };
+        preferences.registerOnSharedPreferenceChangeListener(prefListener);
+
+
+
 
 
     }
@@ -54,6 +99,13 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             Toast toast = Toast.makeText(getApplication().getApplicationContext(),"settings",Toast.LENGTH_SHORT);
             toast.show();
+
+            SettingsFragment settingsFragment = new SettingsFragment();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction trans = fm.beginTransaction();
+            trans.replace(R.id.fragment_container, settingsFragment);
+            trans.addToBackStack("settings");
+            trans.commit();
             return true;
         }
 
@@ -62,11 +114,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View button){
 
-        View parentLayout =(View) button.getParent();
-//       Snackbar snackbar = Snackbar.make(button, parentLayout.getContentDescription(), Snackbar.LENGTH_LONG);
-//        snackbar.show();
 
-       Snackbar snackbar = Snackbar.make(button, networkCommandBuilder.buildNetworkCommand(parentLayout,button), Snackbar.LENGTH_LONG);
+        View parentLayout =(View) button.getParent();
+
+       Snackbar snackbar = Snackbar.make(button, networkCommandLookup.lookupNetworkCommand(parentLayout, button).toString(), Snackbar.LENGTH_LONG);
         snackbar.show();
 
 
@@ -74,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public String playWithRawFiles() throws IOException {
+    public String loadCommandsFromFile() throws IOException {
         String str="";
         StringBuffer buf = new StringBuffer();
         InputStream is = this.getResources().openRawResource(R.raw.command_map);
@@ -89,5 +140,41 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }// PlayWithSDFiles
+    }
+
+    @Override
+    public void onBackPressed(){
+        FragmentManager fm = getFragmentManager();
+        int backStackCount = fm.getBackStackEntryCount();
+
+        if(backStackCount>1){
+            fm.popBackStack();
+        }else{
+            super.onBackPressed();
+        }
+    }
+
+    public void rebuildNetworkCommandLookup(){
+
+        try {
+            this.commandJSON = null;
+            this.commandJSON = loadCommandsFromFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String serverIP = preferences.getString("pref_server_ip", null);
+        String rokuIP = preferences.getString("pref_roku_ip", null);
+        String serverPort = preferences.getString("pref_server_port", null);
+        String rokuPort = preferences.getString("pref_roku_port", null);
+
+        int iServerPort = Integer.parseInt(serverPort);
+        int iRokuPort = Integer.parseInt(rokuPort);
+
+
+
+        networkCommandLookup = null;
+        networkCommandLookup = new NetworkCommandLookup(rokuIP, iRokuPort, serverIP, iServerPort, this.commandJSON);
+    }
+
 }
