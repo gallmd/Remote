@@ -1,19 +1,10 @@
 package net.ddns.gallmd14.remote.net.ddns.gallmd14.remote.network;
 
-import net.ddns.gallmd14.remote.NetworkCommand;
-
 /**
- * Created by matt on 3/19/16.
+ * Created by matt on 3/22/16.
  */
-public class HttpRunnable implements Runnable {
+public interface HttpRunnable extends Runnable {
+    void run();
 
-    private NetworkCommand networkCommand;
-
-    public HttpRunnable(NetworkCommand networkCommand){
-        this.networkCommand = networkCommand;
-    }
-    @Override
-    public void run() {
-
-    }
+    void buildURLString();
 }

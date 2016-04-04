@@ -12,9 +12,9 @@ public class NetworkCommand {
     private int portNumber;
     private String commandArg1;
 
-    public static int COMMAND_TYPE_ROKU = 1;
-    public static int COMMAND_TYPE_TV = 2;
-    public static int COMMAND_TYPE_SOUND =3;
+    public static final int COMMAND_TYPE_ROKU = 1;
+    public static final int COMMAND_TYPE_TV = 2;
+    public static final int COMMAND_TYPE_SOUND =3;
 
     public int getCommandType() {
         return commandType;
